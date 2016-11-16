@@ -1,29 +1,32 @@
 * {
     margin : 0;
     padding : 0;
-    box-sizing: border-box;
+    box-sizing : border-box;
 }
 
 body{
     background : #fff;
     min-height : 100vh;
-    font-family: Arial;
+    color : #999;
+    font-family : 'Raleway';
 }
 /*Nav */
 .nav{
     width : 100%;
     height : 80px;
-    background : transparent;
-    position: fixed;
-    display: flex;
+    background : rgba(240,240,240,.5);
+    position : fixed;
+    display : flex;
+    z-index: 2500;
+    
 }
 
 .nav__wrapper {
-    position: relative;
+    position : relative;
     margin : auto;
-    width: 80%;
-    height: 50%;
-    display: flex;
+    width : 80%;
+    height : 50%;
+    display : flex;
     align-items : center;
     justify-content : space-between;
     /*border : 2px dashed red;*/
@@ -32,12 +35,19 @@ body{
 .nav__wrapper h1 {
     color : #fff;
 }
+
+
+.logo {
+    width : 55px;
+    height : 45px;
+}
+
 /*Icon hamburger*/
 .icon__hamburger{
     width : 40px;
     height : 3px;
     position : relative;
-    background : #fff;
+    background : #000;
 }
 
 .icon__hamburger:before,.icon__hamburger:after{
@@ -45,7 +55,7 @@ body{
     height : 3px;
     content : '';
     position : absolute;
-    background : #fff;
+    background : #000;
 }
 
 .icon__hamburger:before {
@@ -53,7 +63,7 @@ body{
 }
 
 .icon__hamburger:after {
-    top: 10px;
+    top : 10px;
 }
 
 
@@ -62,44 +72,217 @@ body{
     width : 100%;
     height : 100vh;
     background : url('../img/puente.jpg');
-    background-size: cover;
-    display: flex;
+    background-size : cover;
+    background-attachment : fixed;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
 }
 
-.services__wrap {
+.header__wrap h2 {
+    /* code */
+}
+
+.header__wrap button {
+    border : 2px solid orangered;
+    outline : none;
+    color : orangered;
+    background : rgba(240,240,240,.5);
+    text-align: center;
+    padding : .8em;
+    margin : 1.5em;
+    border-radius : 2px;
+}
+
+
+.services {
     width : 100%;
     height : 250px;
     background : #eee;
+    display : flex;
 }
 
-/*
-*Section services
-*whit icons
-*/
+.services__wrapper{
+    margin : auto;
+    width : 80%;
+    height : 80%;
+    display : flex;
+}
+
+
 .services__items {
-    
+    width : 30%;
+    height : 80%;
+    margin : auto;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    transition : all 1.2s;
+    cursor : pointer;
 }
 
+.services__items > .i {
+    font-size : 3em;
+    color : #888;
+}
+
+.services__items > .p {
+    font-size : .8em;
+    text-align : center;
+    color : #888;
+}
+
+/*Article section*/
+.articles {
+    width : 100%;
+    height : 100%;
+    background : transparent;
+    display: flex;
+}
+.articles__container{
+    margin : auto;
+    width : 100%;
+    height: 90%;
+    background : #fff;
+    display : flex;
+    flex-direction : column;
+}
+
+.article__item {
+    width : 100%;
+    height : 400px;
+    display : flex;
+}
+.article__item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.article__img {
+    width : 50%;
+    height: 100%;
+    background : transparent;
+}
+.article__content {
+    width : 50%;
+    height : 100%;
+    background transparent
+    text-align : center;
+    display : flex;
+    align-items : center;
+    flex-direction : column;
+    justify-content : center;
+}
+.article__content h2 {color: orangered;}
+.article__content p {
+    padding : 2em;
+}
+
+.article__img {
+    overflow: hidden;
+    transition : all 1s;
+}
+.article__img img {
+    width : 100%;
+    height: 100%;
+    transition : all 1.5s;
+}
+.article__img img:hover {
+    transform : rotate(20deg) scale(1.7);
+}
+
+/*section banner*/
 .content {
     width : 100%;
     height : 300px;
-    background : tomato;
+    position : relative;
+    background : url('../img/laptop.jpg');
+    background-size : cover;
+    z-index : 1000;
+    display : flex;
+}
+
+
+
+/*.content:before {*/
+/*    content : '';*/
+/*    position : absolute;*/
+/*    top : 0;*/
+/*    left : 0;*/
+/*    right : 0;*/
+/*    bottom : 0;*/
+/*    background : rgba(255, 138, 5, .6);*/
+/*    z-index : 500;*/
+/*}*/
+
+.content h2 {
+    color: #ddd;
+    margin : auto;
+    z-index : 2000;
 }
 
 .footer {
     width : 100%;
     height : 300px;
     background : #444;
+    display : flex;
+    justify-content : space-around;
+    flex-wrap : wrap;
+}
+
+.footer__content {
+    margin : auto;
+    width : 80%;
+    height : 200px;
+    background : #222;
+}
+
+.copy {
+    margin : auto;
+    width : 80%;
+    height : 20px;
+    text-align : center;
+}
+.footer .copy p {
+    color : #eee;
+    font-size : .8em; 
+}
+
+.resalt {
+    color : orangered;
 }
 
 .fab {
     width : 60px;
     height : 60px;
     border-radius : 50%;
-    background : orangered;
-    position: fixed;
-    right: 80px;
-    bottom: 50px;
+    /*background : orangered;*/
+    position : fixed;
+    cursor : pointer;
+    right : 80px;
+    bottom : 50px;
+    /*box-shadow: 0 5px 10px rgba(0,0,0,.4);*/
+    transition : all 1s;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    color : orangered;
+    animation : up .9s linear infinite;
+    z-index : 3000;
 }
 
+@keyframes up {
+    0%{
+        transform : translateY(-8px)
+    }
+    
+}
 
+.fab span {
+    font-size : 3.5em;
+}
+
+/*.fab:hover {*/
+/*    box-shadow : 0 5px 35px rgba(0,0,0,.4);*/
+/*}*/
